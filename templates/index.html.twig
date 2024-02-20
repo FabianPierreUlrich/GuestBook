@@ -2,7 +2,16 @@
 {% block body %}
 <div class="container">
 <h1>Gästebuch</h1>
+{% for label, messages in app.flashes %}
+    {% for message in messages %}
+    <div  class="alert alert-success d-flex allign items-center" role="alert">
+        <div>
+            {{message}}
+        </div>
+    </div>
+    {% endfor %}
+{% endfor %}
 {{form(guestBookForm) }}
-Inhalt.
+
 </div>
 {% endblock %}
